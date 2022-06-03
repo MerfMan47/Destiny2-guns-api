@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const PORT = 8000
+
+app.use(cors())
 
 const guns = {
     'telesto':{
@@ -9,6 +12,10 @@ const guns = {
     }, 
     'whisper of the worm':{
         'type':'heavy',
+        'rarity':'Exotic',
+    },
+    'graviton lance':{
+        'type':'special',
         'rarity':'Exotic',
     },
     'unknown':{
@@ -33,7 +40,7 @@ app.get('/api/:name',(request,responce)=>{
 
 
 
-    // responce.json(guns)
+    responce.json(guns)
 })
 
 app.listen(PORT, ()=>{
