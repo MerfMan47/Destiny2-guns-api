@@ -33,7 +33,7 @@ app.get('/api/:name',(request,responce)=>{
 
     const gunName = request.params.name.toLowerCase()
     if( guns[gunName] ){
-        Response.json(guns[gunName])
+        response.json(guns[gunName])
     }else{
         responce.json(guns['unknown'])
     }
